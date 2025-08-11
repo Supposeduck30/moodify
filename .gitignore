@@ -39,7 +39,9 @@ wheels/
 .idea/
 *.swp
 *.swo
-.vscode
+
+# Cache
+.cache
 
 # OS
 .DS_Store
