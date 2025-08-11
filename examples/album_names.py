@@ -6,8 +6,7 @@ from dotenv import load_dotenv
 load_dotenv()
 client_id = os.getenv('SPOTIPY_CLIENT_ID')
 client_secret = os.getenv('SPOTIPY_CLIENT_SECRET')
-
-travis_uri = 'spotify:artist:0Y5tJX1MQlPlqiwlOH1tJY'
+travis_uri = os.getenv('TRAVIS_SCOTT_URI')
 spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials(
     client_id=client_id,
     client_secret=client_secret,
