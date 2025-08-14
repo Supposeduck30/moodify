@@ -1,33 +1,19 @@
 moodify/
-├── manage.py
-├── moodify/                    # Django project config folder
-│   ├── __init__.py
-│   ├── settings.py             # Django settings (add Spotify & OpenAI configs here)
-│   ├── urls.py                 # Root URL routing
-│   ├── asgi.py
-│   └── wsgi.py
-├── playlist/                   # Django app for playlist logic & views
-│   ├── __init__.py
-│   ├── admin.py
-│   ├── apps.py
-│   ├── models.py
-│   ├── views.py                # Core views (handle mood input, fetch playlists)
-│   ├── urls.py                 # App URL routing
-│   ├── templates/
-│   │   └── playlist/
-│   │       ├── index.html      # Homepage with mood input form
-│   │       └── results.html    # Show playlist results
-│   ├── static/
-│   │   └── playlist/
-│   │       └── style.css       # CSS styles (optional)
-│   └── tests.py
+├── app.py                      # Main Flask app
+├── requirements.txt            # Dependencies (Flask, Spotipy, OpenAI, etc.)
 ├── .gitignore
-├── requirements.txt            # Python dependencies (django, spotipy, openai, etc.)
-├── Procfile                   # For Heroku deployment (web: gunicorn moodify.wsgi)
 ├── README.md
-├── .env                       # Environment variables (client IDs, secrets)
-└── .kiro/                     # For hackathon specs & hooks (keep this folder)
+├── .env                        # Environment variables (Spotify & OpenAI keys)
+├── templates/
+│   ├── index.html              # Homepage with mood input form
+│   └── results.html            # Display playlist results
+├── static/
+│   ├── style.css               # CSS (optional)
+│   └── script.js               # JS if needed
+├── spotify_utils.py            # Functions to interact with Spotify API
+├── ai_utils.py                 # Optional: functions to parse mood using OpenAI
+└── .kiro/                      # Hackathon specs & hooks (mandatory)
     ├── specs/
-    │   └── moodify-spec.yaml  # Spec file describing project features
+    │   └── moodify-spec.yaml
     └── hooks/
-        └── sample-hook.py     # Optional automation hooks for Kiro  what do i staart with 
+        └── sample-hook.py
