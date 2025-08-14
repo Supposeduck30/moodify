@@ -1,2 +1,2 @@
 spotipy
-python-dotenv
+python-dotenvflask
