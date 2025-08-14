@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Moodify Results </title>
+</head>
+
+<body>
+    {% for item in playlists %}
+    <a href="{{ item.url }}" target="_blank">
+        {{ item.name }}
+    </a>
+    {% endfor %}
+    
+</html>
