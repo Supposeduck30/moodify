@@ -15,10 +15,17 @@ spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials(
 def get_playlist_by_mood(mood):
     results = spotify.search(q=mood, type='playlist', limit=5)
     playlists= []
-    items = results.get('playlists', {}.get('items', []))
+    items = results.get('playlists', {}).get('items', [])
     for item in items:
-        playlists.append({
-            'name': item['name'],
-            'url': item['external_urls']['spotify']
-        })
+        if not item:
+            continue
+        name = item.get('name')
+        url = item.get('external_urls', {}).get('spotify')
+        
+        if name and url:
+            playlists.append({
+                'name': item['name'],
+                'url': item['external_urls']['spotify']
+            })
+
     return playlists
