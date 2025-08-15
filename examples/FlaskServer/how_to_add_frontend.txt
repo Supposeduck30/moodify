@@ -1,0 +1,30 @@
+# Flask server code stays the same — we'll add notes for frontend integration below.
+
+# --- Frontend Integration Guide ---
+# You can call these endpoints directly from a browser-based frontend (e.g., React, Vue, plain JS) since CORS is enabled.
+
+# Example using plain JavaScript fetch in a web page:
+#
+# Fetch recommendations:
+# fetch('http://localhost:5000/api/recommendations?seed_genres=pop&limit=10')
+#   .then(response => response.json())
+#   .then(data => {
+#       console.log(data);
+#       data.tracks.forEach(track => {
+#           console.log(track.name, '-', track.artists);
+#       });
+#   })
+#   .catch(err => console.error(err));
+#
+# Fetch track details:
+# fetch('http://localhost:5000/api/tracks?ids=4uLU6hMCjMI75M1A2tKUQC')
+#   .then(res => res.json())
+#   .then(data => console.log(data));
+#
+# Fetch audio features:
+# fetch('http://localhost:5000/api/audio-features?ids=4uLU6hMCjMI75M1A2tKUQC')
+#   .then(res => res.json())
+#   .then(data => console.log(data));
+#
+# In a React app, you can use useEffect to fetch on component mount and store the results in state.
+# Make sure your Flask server is running and accessible to the frontend (adjust localhost/port if needed).
