@@ -13,7 +13,7 @@ spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials(
 ))
 
 def get_playlist_by_mood(mood):
-    results = spotify.search(q=mood, type='playlist', limit=5)
+    results = spotify.search(q=mood, type='playlist', limit=20)
     playlists= []
     items = results.get('playlists', {}).get('items', [])
     for item in items:
