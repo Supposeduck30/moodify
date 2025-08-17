@@ -1,15 +1,49 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title> Moodify Results </title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moodify Results</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+<body class="theme-default">
+  <header class="app-header">
+    <div class="container">
+      <h1 class="brand">MOODIFY</h1>
+      <p class="tagline">Here are playlists to match your mood</p>
+      <a href="/" class="back-link">← New search</a>
+    </div>
+  </header>
 
-<body>
-    {% for item in playlists %}
-    <a href="{{ item.url }}" target="_blank">
-        {{ item.name }}
-    </a>
-    {% endfor %}
-    
+  <main class="container">
+    <section class="results">
+      <ul class="playlist-list">
+        {% for item in playlists %}
+        <li class="playlist-card">
+          <a class="playlist-link" href="{{ item.url }}" target="_blank" rel="noopener">
+            <span class="playlist-name">{{ item.name }}</span>
+            <span class="external-icon" aria-hidden="true">↗</span>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <div class="container">
+      <small>Have fun listening with Moodify presented by Anish Bommena and Krish Joshi</small>
+    </div>
+  </footer>
+
+
+  <script>
+    (function(){
+      const saved = localStorage.getItem('moodify_theme') || 'default';
+      document.body.classList.forEach(c => { if(c.startsWith('theme-')) document.body.classList.remove(c); });
+      document.body.classList.add('theme-' + saved);
+    })();
+  </script>
+</body>
 </html>

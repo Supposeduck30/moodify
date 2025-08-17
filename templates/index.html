@@ -1,15 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Moodify</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moodify</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-<body>
-    <form action="/" method = "POST">
-        <label for="m">Enter your mood:</label>
-        <input type="text" id="m" name = "mood"> <br><br>
-        <input type="submit" value = "Submit">
-    </form>    
-    <script src="script.js"></script>
+<body class="theme-default">
+  <header class="app-header">
+    <div class="container">
+      <h1 class="brand">MOODIFY</h1>
+      <p class="tagline">Find Spotify playlists that match your vibe</p>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <form class="mood-form" action="/" method="POST">
+      <label class="label" for="m">Enter your mood</label>
+      <div class="input-row">
+        <input type="text" id="m" name="mood" placeholder="e.g., happy, chill, study, workout" />
+        <input type="submit" value="Search" class="btn" />
+      </div>
+      <p class="hint">Tip: you can also pick from the mood emojis below</p>
+    </form>
+
+    <section class="mood-picker" aria-label="Quick pick moods">
+      <h2 class="section-title">Popular moods</h2>
+      <div class="emoji-grid">
+      
+        <button type="button" class="emoji-btn" data-mood="happy vibes" data-theme="happy" title="Happy">😊</button>
+        <button type="button" class="emoji-btn" data-mood="sad songs" data-theme="sad" title="Sad">😢</button>
+        <button type="button" class="emoji-btn" data-mood="chill lofi" data-theme="chill" title="Chill">😌</button>
+        <button type="button" class="emoji-btn" data-mood="study focus" data-theme="study" title="Study">📚</button>
+        <button type="button" class="emoji-btn" data-mood="workout pump" data-theme="workout" title="Workout">💪</button>
+        <button type="button" class="emoji-btn" data-mood="party bangers" data-theme="party" title="Party">🎉</button>
+        <button type="button" class="emoji-btn" data-mood="romantic" data-theme="romantic" title="Love">💖</button>
+        <button type="button" class="emoji-btn" data-mood="sleep calm" data-theme="sleep" title="Sleep">😴</button>
+      </div>
+      <p class="microcopy">Click an emoji to search instantly.</p>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <div class="container">
+      <small>Made by Anish Bommena and Krish Joshi</small>
+    </div>
+  </footer>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
