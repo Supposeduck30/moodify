@@ -85,7 +85,7 @@ moodify/
 ├── static/
 │   ├── style.css         # Styling
 │   └── script.js         # Frontend interactions
-├── examples/
+├── examples/               # Unused example code 
 │   ├── artistimage.py    # Artist lookup utility
 │   └── coverart.py       # Album art utility
 └── requirements.txt      # Python dependencies
