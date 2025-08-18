@@ -18,7 +18,7 @@ Moodify is a Flask web application that uses the Spotify Web API to discover pla
 - Python 3.7+
 - Spotify Developer Account (for API credentials)
 
-### Installation
+### Running Locally
 
 1. **Clone the repository**
    ```bash
