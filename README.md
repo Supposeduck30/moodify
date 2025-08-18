@@ -53,7 +53,7 @@ Moodify is a Flask web application that uses the Spotify Web API to discover pla
 
 5. **Run the application**
    ```bash
-   python app.py
+   python api/index.py
    ```
 
 6. **Open your browser** and visit `http://localhost:5000`
@@ -77,18 +77,20 @@ Moodify is a Flask web application that uses the Spotify Web API to discover pla
 
 ```
 moodify/
-├── app.py                 # Main Flask application
-├── spotify_utils.py       # Spotify API integration
+├── api/
+│   └── index.py          # Main Flask application (Vercel serverless)
+├── spotify_utils.py      # Spotify API integration
 ├── templates/
 │   ├── index.html        # Homepage with mood input
 │   └── results.html      # Playlist results page
 ├── static/
 │   ├── style.css         # Styling
 │   └── script.js         # Frontend interactions
-├── examples/               # Unused example code 
-│   ├── artistimage.py    # Artist lookup utility
-│   └── coverart.py       # Album art utility
-└── requirements.txt      # Python dependencies
+├── vercel.json           # Vercel deployment configuration
+├── requirements.txt      # Python dependencies
+└── examples/             # Development utilities (gitignored)
+    ├── artistimage.py    # Artist lookup utility
+    └── coverart.py       # Album art utility
 ```
 
 ## 🛠️ Tech Stack
