@@ -48,4 +48,6 @@ wheels/
 Thumbs.db
 
 # Logs
-*.log
+*.log# 
+Kiro IDE
+.kiro/
